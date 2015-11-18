@@ -24,7 +24,7 @@ File >>New >>Target ...>>Application Extension >>Share Extension >>Next (Click o
 
      6) Add www ionic directory on share project (add directory with reference ).
 
-     7) Main project confix.xml file add on confix.xml file .
+     7) Main project confix.xml file in add on share project.
  
      8) Add on confix.xml file .
                    1) In <content src="index.html" /> (index.htm replace with indexshareimage.html)
