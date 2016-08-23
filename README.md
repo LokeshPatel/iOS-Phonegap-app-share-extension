@@ -57,3 +57,4 @@ File >>New >>Target ...>>Application Extension >>Share Extension >>Next (Click o
 
 More info : http://lokesh-patel.blogspot.in/2015/11/ios-phonegap-app-share-extension-images.html
 
+<a href="https://www.paypal.me/LokeshPatel" target="_blank"><img src="https://dl.dropboxusercontent.com/s/r5azqieu9stu0pc/pay-now-button-afme.png?dl=0" alt="Count 0" width="160"/></a>
