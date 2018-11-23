@@ -10,7 +10,7 @@ Share extensions give users a convenient way to share content with other entitie
 
      1) Create and add share extension project on your app.
      
-File >>New >>Target ...>>Application Extension >>Share Extension >>Next (Click on).
+File >>New >>Target ...>>Application Extension >>Share Extension >>Next (Click on) with "Objective C" language.
 
      2) Add share Project Details : product name ,Organization identifier ...etc .. >> finish.
 
@@ -44,16 +44,21 @@ File >>New >>Target ...>>Application Extension >>Share Extension >>Next (Click o
                 2) closeView() call for Cancel button of share view close 
            
                     Cancel and Send button used like : (app.js ) 
-        
-         app.controller('MainCtrl', function($scope) { $scope.cancelshareview = function() {
-         closeView();//Cancel button event };
-         $scope.sendshareview = function() { // send button event
-          //Apply your logic for image upload on server
-         closeView();
-         }; }
-       
+    
 
- Note : indexshareimage.html demo page of ionic framework.
+# Add Below controller and method in ionic controller.js file 
+
+     .controller('ShareExtensionCtrl', function($scope) {
+        $scope.cancelshareview = function() {
+             closeView();//Cancel button event
+         };
+       $scope.sendshareview = function() { // send button event
+               //Apply your logic for image upload on server
+        closeView();
+       };
+    })
+
+ Note : indexshareimage.html demo page of ionic framework and "ShareExtensionCtrl" add on indexshareimage.html file.
 
 More info : http://lokesh-patel.blogspot.in/2015/11/ios-phonegap-app-share-extension-images.html
 
