@@ -79,36 +79,9 @@ NSString *fileURL = @"";
 - (void)viewDidLoad
 {
      [super viewDidLoad];
-//   UINavigationBar* navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 50)];
-//    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Select items"] ;
-//    
-//    UIButton *btnCancle = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 30)];
-//    [btnCancle setTitle:@"Cancel" forState:UIControlStateNormal];
-//    //[btnCancle setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-//    [btnCancle setBackgroundColor:[UIColor clearColor]];
-//    [btnCancle setTitleColor:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forState:UIControlStateNormal];
-//    [btnCancle setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
-//    [btnCancle addTarget:self action:@selector(btnClickCancel:)forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *btnCancleItem = [[UIBarButtonItem alloc]initWithCustomView:btnCancle];
-//    navigationItem.leftBarButtonItem = btnCancleItem;
-//    
-//    UIButton *btnSend = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 30)];
-//    [btnSend setTitle:@"Send" forState:UIControlStateNormal];
-//    [btnSend setBackgroundColor:[UIColor clearColor]];
-//    [btnSend setTitleColor:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forState:UIControlStateNormal];
-//    [btnSend setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
-//    //[btnSend setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-//    [btnSend addTarget:self action:@selector(btnClickSend:)forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *btnSendItem = [[UIBarButtonItem alloc]initWithCustomView:btnSend];
-//    navigationItem.rightBarButtonItem = btnSendItem;
-//    [navigationBar setBackgroundColor:[UIColor whiteColor]];
-//    [navigationBar pushNavigationItem:navigationItem animated:NO];
-//   // [self.view addSubview:navigationBar];
-//     self.wwwFolderName = @"www";
-//     self.startPage = @"shareimage.html";
-    [self.webView setFrame:CGRectMake(self.webView.bounds.origin.x,self.webView.bounds.origin.y + 20,self.webView.bounds.size.width,self.webView.bounds.size.height - 20)];
-    [self getImageURL];
-    [ShareViewController setShareVaribleHandle:self];
+     [self.webView setFrame:CGRectMake(self.webView.bounds.origin.x,self.webView.bounds.origin.y + 20,self.webView.bounds.size.width,self.webView.bounds.size.height - 20)];
+     [self getImageURL];
+     [ShareViewController setShareVaribleHandle:self];
     
 }//#4285F4
 
@@ -140,7 +113,7 @@ NSString *fileURL = @"";
 -(void) retrunToJavaScriptFunctio
 {
     NSString *scriptCall = [NSString stringWithFormat:@"showShareImages('%@')",fileURL];
-   [self.webView stringByEvaluatingJavaScriptFromString:scriptCall];
+   [(UIWebView*)self.webView stringByEvaluatingJavaScriptFromString:scriptCall];
 }
 
 
@@ -153,12 +126,6 @@ NSString *fileURL = @"";
 - (IBAction) btnClickSend:(id)sender {
     
     //do as you please with buttonClicked.argOne
-}
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -182,7 +149,6 @@ NSString *fileURL = @"";
 {
     // Black base color for background matches the native apps
     theWebView.backgroundColor = [UIColor blackColor];
-    return [super webViewDidFinishLoad:theWebView];
 }
 
 /* Comment out the block below to over-ride */
@@ -192,7 +158,7 @@ NSString *fileURL = @"";
  - (void) webViewDidStartLoad:(UIWebView*)theWebView
  {
    
- return [super webViewDidStartLoad:theWebView];
+ 
  }
  
 /* - (void) webView:(UIWebView*)theWebView didFailLoadWithError:(NSError*)error
